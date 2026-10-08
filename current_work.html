@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selyan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='4' y='4' width='92' height='92' rx='16' fill='%23efede8' stroke='%2326241f' stroke-width='7'/><text x='48' y='73' font-size='60' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%2326241f'>S</text></svg>">
+    <style>
+        :root {
+            --text: #26241f;
+            --muted: #757067;
+            --link: #1a45c2;
+            --bg: #efede8;
+            --rule: #dedad2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Newsreader', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 19px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 88px 24px 120px;
+        }
+
+        header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        header h1 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text);
+        }
+
+        .header-rule {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin-bottom: 52px;
+        }
+
+        .work h2 {
+            font-size: 19px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .work h2 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .work p {
+            margin-bottom: 28px;
+            color: var(--text);
+        }
+
+        .work a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .work a:hover {
+            text-decoration: underline;
+        }
+
+        .work hr {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin: 32px 0;
+        }
+
+        .updated {
+            font-size: 15px;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 64px;
+            padding-top: 20px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            font-size: 15px;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        /* Email affiché sous le footer */
+        #email-reveal {
+            display: none;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        #email-reveal.visible {
+            display: block;
+        }
+
+        #email-reveal a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        #email-reveal a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 620px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: 56px 20px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Selyan</a></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="current_work.html" class="active">Current work</a>
+            </nav>
+        </header>
+        <hr class="header-rule">
+
+        <section class="work">
+            <h2>Account abstraction security at <em>Columbia University</em></h2>
+            <p>Leveraging LLMs to detect ERC-4337 vulnerabilities: auditing wallet
+                implementations and testing how bundlers behave under adversarial inputs.</p>
+
+            <hr>
+
+            <h2>Blockchain infrastructure at <em>ANAM145</em></h2>
+            <p>Building various solutions on the blockchain: payment infrastructure,
+                smart contracts, and the security around them.</p>
+
+            <hr>
+
+            <h2>Topic modelling at the <em>University of Tokyo</em></h2>
+            <p>Building AI agents for topic modelling of mathematical expressions.</p>
+        </section>
+
+        <footer>
+            <a href="#" id="email-link">Email</a>
+            <a href="https://www.linkedin.com/in/selyan-bounouar-527731214/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/selyanbounouar" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://ieeexplore.ieee.org/author/568338722334319" target="_blank" rel="noopener">Google Scholar</a>
+        </footer>
+
+        <div id="email-reveal"></div>
+    </div>
+
+    <script>
+        const user1 = 'selyan.bounouar1';
+        const domain1 = 'gmail.com';
+   
+        const user2 = 'selyan.bounouar';     
+        const domain2 = 'anam145.com';
+
+        const emailLink = document.getElementById('email-link');
+        const emailReveal = document.getElementById('email-reveal');
+
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isVisible = emailReveal.classList.toggle('visible');
+            if (isVisible && !emailReveal.innerHTML) {
+                const a1 = user1 + '@' + domain1;
+                const a2 = user2 + '@' + domain2;
+                emailReveal.innerHTML =
+                    '<a href="mailto:' + a1 + '">' + a1 + '</a><br>' +
+                    '<a href="mailto:' + a2 + '">' + a2 + '</a>';
+            }
+        });
+    </script>
+</body>
+
+</html>

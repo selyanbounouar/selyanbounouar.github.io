@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selyan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='4' y='4' width='92' height='92' rx='16' fill='%23efede8' stroke='%2326241f' stroke-width='7'/><text x='48' y='73' font-size='60' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%2326241f'>S</text></svg>">
+    <style>
+        :root {
+            --text: #26241f;
+            --muted: #757067;
+            --link: #1a45c2;
+            --bg: #efede8;
+            --rule: #dedad2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Newsreader', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 19px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 88px 24px 120px;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        header h1 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text);
+        }
+
+        .header-rule {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin-bottom: 52px;
+        }
+
+        /* ---------- Bio ---------- */
+        .bio p {
+            margin-bottom: 20px;
+        }
+
+        .bio a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        .bio a:hover {
+            text-decoration: underline;
+        }
+
+        .bio .aside {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 64px;
+            padding-top: 20px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            font-size: 15px;
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        /* Email affiché sous le footer */
+        #email-reveal {
+            display: none;
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        #email-reveal.visible {
+            display: block;
+        }
+
+        #email-reveal a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        #email-reveal a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 620px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: 56px 20px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Selyan</a></h1>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="current_work.html">Current work</a>
+                </nav>
+        </header>
+        <hr class="header-rule">
+
+        <section class="bio">
+            <p>I'm a researcher based in Seoul, South Korea, currently working on blockchain
+                R&amp;D at <a href="https://anam145.io/" target="_blank" rel="noopener">ANAM145</a>.</p>
+
+            <p>I enjoy exploring the frontier between blockchain and AI. I've done research on
+                smart contract vulnerabilities at
+                <a href="https://www.cs.columbia.edu/" target="_blank" rel="noopener">Columbia University</a>, along with
+                smart contract development at
+                <a href="https://dcslab.snu.ac.kr/" target="_blank" rel="noopener">Seoul National University</a>.
+                I've also worked at the
+                <a href="https://mynlp.is.s.u-tokyo.ac.jp/" target="_blank" rel="noopener">University of Tokyo</a>,
+                researching AI agents for topic modelling.</p>
+
+            <p>Before that, I was at
+                <a href="https://sites.google.com/view/hwseclab/" target="_blank" rel="noopener">Korea University</a>,
+                building machine learning models to detect illicit transactions on the
+                Bitcoin blockchain. This work led to my first published paper
+                (<a href="https://ieeexplore.ieee.org/document/11229573" target="_blank" rel="noopener">see here</a>).</p>
+
+            <p>I'm originally from Paris, France. I enjoy travelling to new cities and telling
+                myself I'll move there someday.<br><span class="aside">I still believe Paris is the
+                best city in the world, even though I left it.</span></p>
+        </section>
+
+        <footer>
+            <a href="#" id="email-link">Email</a>
+            <a href="https://www.linkedin.com/in/selyan-bounouar-527731214/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/selyanbounouar" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://ieeexplore.ieee.org/author/568338722334319" target="_blank" rel="noopener">Google Scholar</a>
+        </footer>
+
+        <div id="email-reveal"></div>
+    </div>
+
+    <script>
+        const user1 = 'selyan.bounouar1';
+        const domain1 = 'gmail.com';
+   
+        const user2 = 'selyan.bounouar';     
+        const domain2 = 'anam145.com';
+
+        const emailLink = document.getElementById('email-link');
+        const emailReveal = document.getElementById('email-reveal');
+
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isVisible = emailReveal.classList.toggle('visible');
+            if (isVisible && !emailReveal.innerHTML) {
+                const a1 = user1 + '@' + domain1;
+                const a2 = user2 + '@' + domain2;
+                emailReveal.innerHTML =
+                    '<a href="mailto:' + a1 + '">' + a1 + '</a><br>' +
+                    '<a href="mailto:' + a2 + '">' + a2 + '</a>';
+            }
+        });
+    </script>
+</body>
+
+</html>
